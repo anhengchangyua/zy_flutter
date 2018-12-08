@@ -35,6 +35,9 @@ class Home extends StatelessWidget {
             )
           ],
           bottom: TabBar(
+            indicatorColor: Colors.white,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorWeight: 2.0,
             tabs: <Widget>[
               Tab(icon: Icon(Icons.screen_lock_portrait)),
               Tab(icon: Icon(Icons.room_service)),
