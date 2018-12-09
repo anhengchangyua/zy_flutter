@@ -4,6 +4,7 @@ import 'demo/draw_demo.dart';
 import 'demo/ListViewDemo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
+import 'demo/view_demo.dart';
 
 void main() => runApp(App());
 
@@ -24,7 +25,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.yellow,
@@ -42,14 +43,20 @@ class Home extends StatelessWidget {
               tabs: <Widget>[
                 Tab(icon: Icon(Icons.screen_lock_portrait)),
                 Tab(icon: Icon(Icons.room_service)),
-                Tab(icon: Icon(Icons.date_range))
+                Tab(icon: Icon(Icons.date_range)),
+                Tab(icon: Icon(Icons.dashboard))
               ],
             ),
             title: Text('LT'),
             elevation: 5.0,
           ),
           body: TabBarView(
-            children: <Widget>[ListViewDemo(), BasicDemo(), LayoutDemo()],
+            children: <Widget>[
+              ListViewDemo(),
+              BasicDemo(),
+              LayoutDemo(),
+              ViewDemo()
+            ],
           ),
           drawer: DrawDemo(),
           bottomNavigationBar: BottomNavigationBarDemo(),
