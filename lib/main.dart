@@ -7,6 +7,7 @@ import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigation_demo.dart';
+import 'demo/form_demo.dart';
 
 void main() => runApp(App());
 
@@ -14,8 +15,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       // home: NavigationDemo(),
-      initialRoute: '/', //定义初始值
+      initialRoute: '/form', //定义初始值
       routes: {
         '/': (context) => Home(),
         '/navi': (context) => Page(
@@ -23,7 +25,8 @@ class App extends StatelessWidget {
             ),
         '/flat': (context) => Page(
               title: 'flat',
-            )
+            ),
+        '/form': (context) => FormDemo()
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
