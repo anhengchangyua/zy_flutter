@@ -8,6 +8,7 @@ import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigation_demo.dart';
 import 'demo/form_demo.dart';
+import 'demo/material_components.dart';
 
 void main() => runApp(App());
 
@@ -15,24 +16,26 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // home: NavigationDemo(),
-      initialRoute: '/form', //定义初始值
-      routes: {
-        '/': (context) => Home(),
-        '/navi': (context) => Page(
-              title: 'navi',
-            ),
-        '/flat': (context) => Page(
-              title: 'flat',
-            ),
-        '/form': (context) => FormDemo()
-      },
-      theme: ThemeData(
+        debugShowCheckedModeBanner: false,
+        // home: NavigationDemo(),
+        initialRoute: '/mc', //定义初始值
+        routes: {
+          '/': (context) => Home(),
+          '/navi': (context) => Page(
+                title: 'navi',
+              ),
+          '/flat': (context) => Page(
+                title: 'flat',
+              ),
+          '/form': (context) => FormDemo(),
+          '/mc': (context) => MaterialComDemo()
+        },
+        theme: ThemeData(
           primarySwatch: Colors.yellow,
-          highlightColor: Color.fromRGBO(225, 225, 225, 0.4),
-          splashColor: Colors.white70),
-    );
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.white70,
+          accentColor: Color.fromRGBO(3, 54, 255, 1.0),
+        ));
   }
 }
 
