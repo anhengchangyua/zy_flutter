@@ -113,6 +113,34 @@ class ButtonDemo extends StatelessWidget {
                   ),
                 ), //文字按钮
               ],
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                OutlineButton(
+                  child: Text('OutlineButton'),
+                  splashColor: Colors.grey[200],
+                  // color: Theme.of(context).accentColor,
+                  borderSide: BorderSide(color: Colors.black),
+                  textColor: Colors.black,
+                  onPressed: () => debugPrint('111'),
+                ),
+                SizedBox(
+                  width: 16.0,
+                ),
+                OutlineButton.icon(
+                  icon: Icon(Icons.add),
+                  label: Text('Button'),
+                  onPressed: () {},
+                  borderSide: BorderSide(color: Colors.black),
+                  splashColor: Colors.grey,
+                  // color: Theme.of(context).accentColor,
+                  textColor: Colors.black,
+                ),
+              ],
             )
           ],
         ),
