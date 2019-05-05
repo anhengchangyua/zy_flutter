@@ -20,10 +20,10 @@ class PageViewBuilderDemo extends StatelessWidget {
         ),
         Positioned(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[Text(posts[index].author)],
           ),
-          top: 8.0,
+          bottom: 8.0,
           left: 8.0,
         )
       ],
@@ -48,6 +48,7 @@ class PageViewDemo extends StatelessWidget {
         onPageChanged: (cureentpage) =>
             debugPrint(cureentpage.toString()), //切换回调
         pageSnapping: true, //是否自动跳转page
+        scrollDirection: Axis.vertical,
         controller: PageController(
             initialPage: 0,
             keepPage: false,
