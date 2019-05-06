@@ -75,7 +75,10 @@ class SliverGridDemo extends StatelessWidget {
     return Container(
       child: SliverGrid(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 8.0, mainAxisSpacing: 8.0),
+              crossAxisCount: 2,
+              crossAxisSpacing: 8.0,
+              mainAxisSpacing: 8.0,
+              childAspectRatio: 1.0),
           delegate: SliverChildBuilderDelegate((BuildContext context, index) {
             return Container(
               child: Image.network(

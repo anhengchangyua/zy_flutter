@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/post.dart';
-import './ListViewDetail.dart';
+import './listview_detail.dart';
 
 class ListViewDemo extends StatelessWidget {
   Widget _listItemBuilder(BuildContext context, int index) {

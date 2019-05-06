@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'demo/BottomNavigationBarDemo.dart';
+import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/draw_demo.dart';
-import 'demo/ListViewDemo.dart';
+import 'demo/listview_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
