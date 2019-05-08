@@ -9,6 +9,7 @@ import 'demo/sliver_demo.dart';
 import 'demo/navigation_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
+import 'demo/dialog_demo.dart';
 
 void main() => runApp(App());
 
@@ -18,7 +19,7 @@ class App extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: NavigationDemo(),
-        initialRoute: '/mc', //定义初始值
+        initialRoute: '/dialog', //定义初始值
         routes: {
           '/': (context) => Home(),
           '/navi': (context) => Page(
@@ -28,7 +29,8 @@ class App extends StatelessWidget {
                 title: 'flat',
               ),
           '/form': (context) => FormDemo(),
-          '/mc': (context) => MaterialComDemo()
+          '/mc': (context) => MaterialComDemo(),
+          '/dialog': (context) => DialogDemo()
         },
         theme: ThemeData(
           primarySwatch: Colors.yellow,
