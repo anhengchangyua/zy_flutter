@@ -4,6 +4,7 @@ import 'demo/BottomNavigationBarDemo.dart';
 import 'demo/draw_demo.dart';
 import 'demo/ListViewDemo.dart';
 import 'demo/basic_demo.dart';
+import 'demo/http/http_demo.dart';
 import 'demo/layout_demo.dart';
 
 void main() => runApp(App());
@@ -55,7 +56,7 @@ class Home extends StatelessWidget {
               ListViewDemo(),
               BasicDemo(),
               LayoutDemo(),
-              BlocDemo()
+              HttpDemo()
             ],
           ),
           drawer: DrawDemo(),
