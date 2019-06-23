@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:zy_flutter/demo/bloc/bloc_demo.dart';
 import 'demo/BottomNavigationBarDemo.dart';
 import 'demo/draw_demo.dart';
 import 'demo/ListViewDemo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
-import 'demo/view_demo.dart';
 
 void main() => runApp(App());
 
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
               ListViewDemo(),
               BasicDemo(),
               LayoutDemo(),
-              ViewDemo()
+              BlocDemo()
             ],
           ),
           drawer: DrawDemo(),
