@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'model/post.dart';
+import 'package:zy_flutter/demo/bloc/bloc_demo.dart';
+import 'demo/BottomNavigationBarDemo.dart';
+import 'demo/draw_demo.dart';
+import 'demo/ListViewDemo.dart';
+import 'demo/basic_demo.dart';
+import 'demo/layout_demo.dart';
 
 void main() => runApp(App());
 
@@ -8,63 +13,53 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Home(),
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(
+          primarySwatch: Colors.yellow,
+          highlightColor: Color.fromRGBO(225, 225, 225, 0.4),
+          splashColor: Colors.white70),
     );
   }
 }
 
 class Home extends StatelessWidget {
-  Widget _listItemBuilder(BuildContext context, int index) {
-    return Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(8.0),
-      child: Column(
-        children: <Widget>[
-          Image.network(posts[index].imageUrl),
-          SizedBox(height: 16.0),
-          Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.title,
-          ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subhead,
-          ),
-          SizedBox(
-            height: 8.0,
-          )
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('LT'),
-          elevation: 5.0,
-        ),
-        body: ListView.builder(
-          itemCount: posts.length,
-          itemBuilder: _listItemBuilder,
-        ),
-      ),
-    );
-  }
-}
-
-class Hello extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'hello',
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-            fontSize: 40.0, fontWeight: FontWeight.bold, color: Colors.black26),
-      ),
-    );
+    return DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.yellow,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.search),
+                tooltip: 'search',
+                onPressed: () => debugPrint('eee'),
+              )
+            ],
+            bottom: TabBar(
+              indicatorColor: Colors.white,
+              indicatorSize: TabBarIndicatorSize.tab,
+              indicatorWeight: 2.0,
+              tabs: <Widget>[
+                Tab(icon: Icon(Icons.screen_lock_portrait)),
+                Tab(icon: Icon(Icons.room_service)),
+                Tab(icon: Icon(Icons.date_range)),
+                Tab(icon: Icon(Icons.dashboard))
+              ],
+            ),
+            title: Text('LT'),
+            elevation: 5.0,
+          ),
+          body: TabBarView(
+            children: <Widget>[
+              ListViewDemo(),
+              BasicDemo(),
+              LayoutDemo(),
+              BlocDemo()
+            ],
+          ),
+          drawer: DrawDemo(),
+          bottomNavigationBar: BottomNavigationBarDemo(),
+        ));
   }
 }
