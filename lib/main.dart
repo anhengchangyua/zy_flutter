@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'demo/BottomNavigationBarDemo.dart';
+import 'demo/animation/animation_demo.dart';
 import 'demo/draw_demo.dart';
 import 'demo/ListViewDemo.dart';
 
@@ -49,10 +50,7 @@ class Home extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               ListViewDemo(),
-              Icon(
-                Icons.import_export,
-                size: 128.0,
-              ),
+              AnimationDemo(),
               Icon(
                 Icons.image_aspect_ratio,
                 size: 128.0,
