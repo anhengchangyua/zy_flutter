@@ -32,12 +32,12 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
         duration: Duration(milliseconds: 1000),
         vsync: this);
 
-    curve = CurvedAnimation(parent: animationController,curve: Curves.bounceInOut);
+    curve =
+        CurvedAnimation(parent: animationController, curve: Curves.bounceInOut);
 
     animation = Tween(begin: 32.0, end: 100.0).animate(curve);
     animationColor = ColorTween(begin: Colors.red, end: Colors.redAccent)
         .animate(animationController);
-
 
     animationController.addListener(() {
       setState(() {});
@@ -57,20 +57,36 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: IconButton(
-          icon: Icon(Icons.favorite),
-          iconSize: animation.value,
-          color: animationColor.value,
-          onPressed: () {
-            switch (animationController.status) {
-              case AnimationStatus.completed:
-                animationController.reverse();
-                break;
-              default:
-                animationController.forward();
-                break;
-            }
-          }),
+      child: AnimationHeart(
+          animations: [animation, animationColor],
+          controller: animationController),
     );
+  }
+}
+
+class AnimationHeart extends AnimatedWidget {
+  final List animations;
+  final AnimationController controller;
+
+  AnimationHeart({this.animations, this.controller})
+      : super(listenable: controller);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return IconButton(
+        icon: Icon(Icons.favorite),
+        iconSize: animations[0].value,
+        color: animations[1].value,
+        onPressed: () {
+          switch (controller.status) {
+            case AnimationStatus.completed:
+              controller.reverse();
+              break;
+            default:
+              controller.forward();
+              break;
+          }
+        });
   }
 }
